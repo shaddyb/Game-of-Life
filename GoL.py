@@ -4,13 +4,13 @@ print("\n")
 ans = input("Do you wish to use an Empty seed or a Line Seed? (e/l) ")
 print("\n")
   
-#I'm denoting alive cells with 1's and dead cells with 0's.
+#I am denoting alive cells with 1's and dead cells with 0's.
 #I feel like using a binary choice was an obvious one for this game.
 
 #The game specification does state that this is an infinite 2D-grid of cells, but I've only used a 5x5 array.
 #This is due to several reasons. 
-#One of them is that if you can proof an empty seed produces an empty universe with a small array it must work for one that is infinite.
-#Another reason is that the Line seed will only have be 3 alive cells that go back and forth. 
+#One of them is that if you can prove an empty seed produces an empty universe with a small array it must work for one that is infinite.
+#Another reason is that the Line seed will only ever be 3 alive cells that go back and forth. 
 #In fact, this seed is called an Oscillating seed due to this behaviour.
 #The interesting thing is that I used a 5x5 array instead of a 3x3 that would conceptually also work.
 #That is indeed true but my way of generating the evolutions required a slightly bigger array to work.
@@ -35,7 +35,7 @@ else:
 #Initially I generate an array called N that is defined by the size of my seed Z.
 #My for statements allow me to check every cell in the array.
 #I like to think of my array as a grid or matrix defined by (x, y) coordinates.
-#My use of n-1 for my range limits is used due how index selection starts from the zero-th position.
+#My use of n-1 for my range limits is used due to how an index selection starts from the zero-th position.
 #I deliberately formatted my code for my N[x][y] array to visually show how I'm collecting my neighbour values.
 #Every time I find a neighbour I update my N array to count the number of neighbours for each cell.
 #For example, for my Line seed I'll get values in N that will vary from 0 to 3 neighbours.
@@ -98,6 +98,8 @@ iterate(Z)
 print("\n")
 print("Second evolution:")
 display(Z)
+iterate(Z)
 print("\n")
 print("Third evolution:")
 display(Z)
+iterate(Z)
